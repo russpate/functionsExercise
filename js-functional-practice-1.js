@@ -13,9 +13,19 @@
 // 0. write your own forEach() that takes two arguments: an array, and a callback
 
 function forEach(array, callback){
-    // YOUR CODE HERE
-
+  for(var i = 0; i < array.length; i++){
+    callback (array[i], i, array);
+  }
 }
+
+
+// in class
+
+
+
+
+
+
 
 // testing your code with console.assert
 var total = 1;
@@ -31,10 +41,13 @@ function sum(){
     var args = [].slice.call(arguments);
 
     // .. do something with each element of args
-    // YOUR CODE HERE
+    var result = 0;
+    for(var i = 0; i < args.length; i++) {
+      result = result + args[i];
+    }
+    return result;
 }
-
-console.assert( sum(1, 2, 3, 4, 5) === 15 )
+console.assert( sum(1, 2, 3, 4, 5) === 15 );
 
 // 2. calculate the average of numbers (returns the average (A NUMBER))
 
@@ -43,10 +56,14 @@ function average(){
     var args = [].slice.call(arguments);
 
     // .. do something with each element of args
-    // YOUR CODE HERE
+    var result = 0;
+    for(var i = 0; i < args.length; i++) {
+      result = result + args[i] / args.length;
+    }
+    return result;
 }
 
-console.assert( average(2, 4, 6, 8) === 5 )
+console.assert( average(2, 4, 6, 8) === 5 );
 
 // 3. find the largest number of the inputs (returns the largest input (A NUMBER))
 
@@ -55,10 +72,14 @@ function largest(){
     var args = [].slice.call(arguments);
 
     // .. do something with each element of args
-    // YOUR CODE HERE
+    var result = 0;
+    for(var i = 0; i < args.length; i++) {
+      result = Math.max(args[i]);
+    }
+    return result;
 }
 
-console.assert( largest(2, 4, 6, 8) === 8 )
+console.assert(largest(2, 4, 6, 8) === 8 );
 
 // 4. find the longest string of the inputs (returns the longest input (A STRING))
 
@@ -70,7 +91,7 @@ function longest(){
     // YOUR CODE HERE
 }
 
- console.assert( longest("this", "is", "a", "awesome", "function") === "function" );
+ console.assert(longest("this", "is", "a", "awesome", "function") === "function" );
 
 /**
  * PART II
@@ -83,11 +104,31 @@ function longest(){
 
 // .sort()
 
+function sorter(numbers){
+  var myArr = [].slice.call(arguments);
+  return myArr.sort();
+}
+
 // .concat()
+
+function catter(){
+  var myArr = [].slice.call(arguments);
+  return myArr.concat();
+}
 
 // .indexOf()
 
+function indexer(){
+  var myArr = [].slice.call(arguments);
+  return myArr.indexOf();
+}
+
 // .split()
+
+function splitter(){
+  var myArr = [].slice.call(arguments);
+  return myArr.split();
+}
 
 // .join()
 
@@ -106,3 +147,8 @@ function longest(){
 // .filter()
 
 // .map()
+
+console.assert(sorter(5, 3, 4, 2).lastIndexOf(5) === 3);
+console.assert(catter("dog" + "cat") === "dogcat");
+console.assert(indexer("r","In a van down by the river") === 2);
+console.assert(splitter("johnny") === "j","o","h","n","n","y");
