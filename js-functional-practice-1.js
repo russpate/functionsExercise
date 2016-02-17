@@ -113,27 +113,90 @@ var catter = function(){
 
 // .indexOf()
 
+var indexArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var indexer = function(){
+  indexArrNew = indexArr.indexOf("New Balance");
+  return indexArrNew;
+};
+
 // .split()
+
+var splitArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var splitter = function(){
+  splitArrNew = splitArr.join().split("N").join();
+  return splitArrNew;
+};
 
 // .join()
 
+var joinArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var joiner = function(){
+  joinArrNew = joinArr.join();
+  return joinArrNew;
+};
+
 // .pop()
+
+var popArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var popper = function(){
+  popArrNew = popArr.pop();
+  return popArrNew;
+};
 
 // .push()
 
+var pushArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var pusher = function(){
+  pushArr.push("Converse");
+  pushArrNew = pushArr.join();
+  return pushArrNew;
+};
+
 // .slice()
+
+var sliceArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var slicer = function(){
+  sliceArrNew = sliceArr.slice(0,3).join();
+  return sliceArrNew;
+};
 
 // .splice()
 
+var spliceArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var splicer = function(){
+  spliceArrNew = spliceArr.splice(1,2).join();
+  return spliceArrNew;
+};
+
 // .shift()
+
+var shiftArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var shifter = function(){
+  shiftArrNew = shiftArr.shift();
+  return shiftArrNew;
+};
 
 // .unshift()
 
+var unshiftArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var unshifter = function(){
+  unshiftArrNew = unshiftArr.unshift("Converse");
+  return unshiftArrNew;
+};
+
 // .filter()
+
 
 // .map()
 
 console.assert(sorter("Aasics", "New Balance", "Nike", "Adidas", "Vans") === "Aasics,Adidas,New Balance,Nike,Vans");
 console.assert(catter("Converse") === "Aasics,New Balance,Nike,Adidas,Vans,Converse");
-// console.assert(indexer("r","In a van down by the river") === 2);
-// console.assert(splitter("johnny") === "j","o","h","n","n","y");
+console.assert(indexer("New Balance") === 1);
+console.assert(splitter("N") === "Aasics,,ew Balance,,ike,Adidas,Vans");
+console.assert(joiner() === "Aasics,New Balance,Nike,Adidas,Vans");
+console.assert(popper() === "Vans");
+console.assert(pusher("Converse") === "Aasics,New Balance,Nike,Adidas,Vans,Converse");
+console.assert(slicer(0,3) === "Aasics,New Balance,Nike");
+console.assert(splicer(1,2) === "New Balance,Nike");
+console.assert(shifter() === "Aasics");
+console.assert(unshifter() === 6);
