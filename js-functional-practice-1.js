@@ -18,15 +18,6 @@ function forEach(array, callback){
   }
 }
 
-
-// in class
-
-
-
-
-
-
-
 // testing your code with console.assert
 var total = 1;
 forEach([1, 2, 3, 4], function(a){ total *= a; });
@@ -102,33 +93,27 @@ function longest(){
  * 2. write a console.assert to test them
  */
 
+
 // .sort()
 
-function sorter(numbers){
-  var myArr = [].slice.call(arguments);
-  return myArr.sort();
-}
+var sortArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+
+var sorter = function(){
+  sortArrNew = sortArr.sort().join();
+  return sortArrNew;
+};
 
 // .concat()
 
-function catter(){
-  var myArr = [].slice.call(arguments);
-  return myArr.concat();
-}
+var catArr = ["Aasics", "New Balance", "Nike", "Adidas", "Vans"];
+var catter = function(){
+  catArrNew = catArr.concat("Converse").join();
+  return catArrNew;
+};
 
 // .indexOf()
 
-function indexer(){
-  var myArr = [].slice.call(arguments);
-  return myArr.indexOf();
-}
-
 // .split()
-
-function splitter(){
-  var myArr = [].slice.call(arguments);
-  return myArr.split();
-}
 
 // .join()
 
@@ -148,7 +133,7 @@ function splitter(){
 
 // .map()
 
-console.assert(sorter(5, 3, 4, 2).lastIndexOf(5) === 3);
-console.assert(catter("dog" + "cat") === "dogcat");
-console.assert(indexer("r","In a van down by the river") === 2);
-console.assert(splitter("johnny") === "j","o","h","n","n","y");
+console.assert(sorter("Aasics", "New Balance", "Nike", "Adidas", "Vans") === "Aasics,Adidas,New Balance,Nike,Vans");
+console.assert(catter("Converse") === "Aasics,New Balance,Nike,Adidas,Vans,Converse");
+// console.assert(indexer("r","In a van down by the river") === 2);
+// console.assert(splitter("johnny") === "j","o","h","n","n","y");
